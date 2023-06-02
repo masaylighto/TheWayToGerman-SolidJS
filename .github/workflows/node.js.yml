@@ -8,32 +8,31 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-    environment: production 
+    environment: production
     steps:
-    - name: checkout
-    - uses: actions/checkout@v3
-    
-    - name: Use Node.js 20
-      uses: actions/setup-node@v3
-      with:
-        node-version: 20
-        cache: 'npm'
-        
-    - name: install dependencies
-    - run: |
-        npm ci
-        npm install -D tailwindcss postcss autoprefixer
-        npx tailwindcss init -p
-        
-    - name: build
-    - run: npm run build --if-present
-    
-    - name: Test
-    - run: npm test
- 
-    - name: Deploy code to EC2 instance
-      uses: easingthemes/ssh-deploy@v4.1.8
-      with:
+      - name: checkout
+        uses: actions/checkout@v3
+      
+      - name: Use Node.js 20
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: npm
+      - name: install dependencies
+        run: |
+          npm ci
+          npm install -D tailwindcss postcss autoprefixer
+          npx tailwindcss init -p
+          
+      - name: build
+        run: npm run build --if-present
+      
+      - name: Test
+        run: npm test
+      
+      - name: Deploy code to EC2 instance
+        uses: easingthemes/ssh-deploy@v4.1.8
+        with:
           SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
           SOURCE: ./
           REMOTE_HOST: ${{ secrets.EC2_HOST }}
