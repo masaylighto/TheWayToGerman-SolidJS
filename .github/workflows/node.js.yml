@@ -38,4 +38,4 @@ jobs:
           SCRIPT_AFTER: |
             cd ${{ secrets.Target }}
             sudo docker build . -t front_end
-            sudo docker run --name the_way_to_german)front_end -p 6080:80 front_end
+            sudo docker run --name the_way_to_german_front_end -p 6080:80 front_end
