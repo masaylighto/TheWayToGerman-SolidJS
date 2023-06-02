@@ -1,0 +1,18 @@
+{
+  "resolvedId": "D:/Coding/TheWayToGerman-SolidJS/node_modules/solid-start/error-boundary/index.tsx",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { ErrorBoundary } from \"./ErrorBoundary\";\nexport { ErrorMessage } from \"./ErrorBoundary\";\nexport { ErrorBoundary };\nexport default ErrorBoundary;\n",
+      "start": 1685728592825,
+      "end": 1685728592837
+    },
+    {
+      "name": "solid",
+      "result": "import { ErrorBoundary } from \"./ErrorBoundary\";\nexport { ErrorMessage } from \"./ErrorBoundary\";\nexport { ErrorBoundary };\nexport default ErrorBoundary;",
+      "start": 1685728592837,
+      "end": 1685728592839,
+      "order": "pre"
+    }
+  ]
+}
