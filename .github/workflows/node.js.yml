@@ -37,5 +37,5 @@ jobs:
           TARGET: ${{ secrets.Target }}
           SCRIPT_AFTER: |
             cd ${{ secrets.Target }}
-            docker build . -t Frontend
-            docker run --name TheWayToGermanFrontEnd -p 6080:80 Frontend
+            sudo docker build . -t front_end
+            sudo docker run --name the_way_to_german)front_end -p 6080:80 front_end
