@@ -42,6 +42,7 @@ jobs:
           REMOTE_HOST: ${{ secrets.EC2_HOST }}
           REMOTE_USER: ${{ secrets.EC2_USERNAME }}
           TARGET: ${{ secrets.Target }}
+          ARGS : -v
           SCRIPT_AFTER: |
             cd ${{ secrets.Target }}
             sudo docker image rm front_end -f
