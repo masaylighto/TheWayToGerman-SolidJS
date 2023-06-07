@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="48"
+   height="48"
+   viewBox="0 0 12.7 12.7"
+   version="1.1"
+   id="svg1451"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
+   sodipodi:docname="flag.svg">
+  <defs
+     id="defs1445" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="22.4"
+     inkscape:cx="29.845763"
+     inkscape:cy="28.176717"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="2400"
+     inkscape:window-height="1261"
+     inkscape:window-x="2391"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata1448">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="rect2014"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-miterlimit:4.5;stroke-dasharray:none;paint-order:fill markers stroke"
+       d="M 0.33138672,0 H 12.397982 c 0.183224,0 0.33073,0.1475052 0.33073,0.33072916 V 4.2420855 H 6.5756147e-4 V 0.33072916 C 6.5756147e-4,0.1475052 0.14816277,0 0.33138672,0 Z"
+       sodipodi:nodetypes="sssccss" />
+    <rect
+       style="fill:#ff4c5a;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-miterlimit:4.5;stroke-dasharray:none;paint-order:fill markers stroke"
+       id="rect2014-4"
+       width="12.728054"
+       height="4.2420855"
+       x="0.00065756147"
+       y="4.2420855" />
+    <path
+       id="rect2014-42"
+       style="fill:#ffe15a;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-miterlimit:4.5;stroke-dasharray:none;paint-order:fill markers stroke"
+       d="M 0.33138678,12.726256 H 12.397982 c 0.183224,0 0.33073,-0.147505 0.33073,-0.330729 V 8.4841708 H 6.5768191e-4 v 3.9113562 c 0,0.183224 0.14750519809,0.330729 0.33072909809,0.330729 z"
+       sodipodi:nodetypes="sssccss" />
+  </g>
+</svg>
