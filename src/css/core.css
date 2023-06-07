@@ -1,0 +1,58 @@
+.mx-quarter
+{
+    margin-left: 25%;
+    margin-right: 25%;
+}
+.bg-flag-red{
+    background-color: #ff4b55;
+}
+.text-flag-red{
+   color: #ff4b55;
+}
+.text-flag-yellow{
+    color: #fffe15af;
+ }
+ .text-flag-black{
+    color: #464653;
+ }
+.border-flag-red{
+    border-color: #ff4b55;
+}
+.bg-flag-black{
+    background-color: #464653;
+}
+.border-flag-red{
+    border-color: #ff4b55;
+}
+.text-flag-color{
+
+    background: linear-gradient(90deg,#464655, #ff4b55,#ffe15a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+.bg-flag-color{
+
+    background: linear-gradient(90deg,#464655, #ff4b55,#ffe15a);
+   
+}
+.bg-germanwave{
+    background: url("../imgs/Germanwaves.svg");
+}
+
+.input-no-bg:valid {
+    background-color: transparent !important;
+}
+
+.input-no-bg:default {
+    background-color: transparent !important;
+ }
+ .input-no-bg:empty {
+    background-color: transparent !important;
+ }
+ .input-no-bg:auto-fill {
+    background-color: transparent !important;
+    outline: transparent !important;
+ }
+ 
