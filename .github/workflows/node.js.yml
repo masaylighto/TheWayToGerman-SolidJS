@@ -51,7 +51,7 @@ jobs:
          
       - name: Run code on EC2 instance
         run: |  
-         ssh -o StrictHostKeyChecking=no -i ../key.pem  ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }}  "cd ~/${{ secrets.Target }}/ ; sudo docker image rm front_end -f; sudo docker build . -t front_end;sudo docker run --name the_way_to_german_front_end -p 6080:80 -d front_end  ; sudo rm node_modules -rf"
+         ssh -o StrictHostKeyChecking=no -i ../key.pem  ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }}  "cd ~/${{ secrets.Target }}/ ; sudo docker image rm front_end -f; sudo docker build . -t front_end;sudo docker run --name the_way_to_german_front_end -p 6080:3000 -d front_end  ; sudo rm node_modules -rf"
        
       - name: Remove SSH Key File     
         run:  sudo rm  ../key.pem      
