@@ -1,18 +1,15 @@
 // @refresh reload
-
 import {
   Body,
-  ErrorBoundary,
   FileRoutes,
   Head,
   Html,
   Meta,
   Routes,
-  Scripts,
   Title,
 } from "solid-start";
 import "./css/tailwind.css";
-
+console.log()
 export default function Root() {
   return (
     <Html lang="ar" class="h-full">
