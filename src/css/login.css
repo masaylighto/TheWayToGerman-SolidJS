@@ -1,10 +1,10 @@
 .Person-img{
-    background-image: url(src/imgs/Person.svg);
+    background-image: url(../imgs/Person.svg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .Key-img{
-    background-image: url(src/imgs/Key.svg);
+    background-image: url(../imgs/Key.svg);
     background-repeat: no-repeat;
     background-size: cover;
 }
