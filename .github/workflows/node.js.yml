@@ -32,20 +32,26 @@ jobs:
     name: deploy
     needs: build
     runs-on: ubuntu-latest
-    environment: Production
-    steps:      
+    environment: production
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+          
+      - name: Create SSH Key File      
+        run: |        
+          echo "${{ secrets.EC2_SSH_KEY }}" >> ../key.pem
+          sudo chmod 600 ../key.pem
+      - name: Prepare for Deployment
+        run: |  
+          ssh -o StrictHostKeyChecking=no -i ../key.pem  ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }}  "mkdir -p ~/${{ secrets.Target }}/ ;  rm ~/${{ secrets.Target }}/* -rf"
+       
       - name: Deploy code to EC2 instance
-        uses: easingthemes/ssh-deploy@v4.1.8
-        with:
-          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
-          SOURCE: ./
-          REMOTE_HOST: ${{ secrets.EC2_HOST }}
-          REMOTE_USER: ${{ secrets.EC2_USERNAME }}
-          TARGET: ${{ secrets.Target }}
-          ARGS : -v
-          SCRIPT_AFTER: |
-            cd ${{ secrets.Target }}
-            sudo docker image rm front_end -f
-            sudo docker build . -t front_end
-            sudo docker run --name the_way_to_german_front_end -p 6080:80 -d front_end    
-            sudo rm node_modules -r
+        run: |  
+         rsync -v -Pav -e "ssh -o StrictHostKeyChecking=no -i ../key.pem  " . ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }}:~/${{ secrets.Target }}/
+         
+      - name: Run code on EC2 instance
+        run: |  
+         ssh -o StrictHostKeyChecking=no -i ../key.pem  ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }}  "cd ~/${{ secrets.Target }}/ ; sudo docker image rm front_end -f; sudo docker build . -t front_end;sudo docker run --name the_way_to_german_front_end -p 6080:80 -d front_end  ; sudo rm node_modules -r"
+       
+      - name: Remove SSH Key File     
+        run:  sudo rm  ../key.pem      
