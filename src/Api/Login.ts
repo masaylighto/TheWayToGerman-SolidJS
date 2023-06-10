@@ -4,7 +4,7 @@ import QualifyPath from "./helper"
 import LoginDTO from './DTO/LoginDTO';
 export default async function Auth(dto:LoginDTO) : Promise<String | LoginResponse | ErrorResponse>{
 
-   let response = await fetch(QualifyPath("v1","Login/Auth"),{
+   let response = await fetch(QualifyPath("Login/Auth"),{
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'

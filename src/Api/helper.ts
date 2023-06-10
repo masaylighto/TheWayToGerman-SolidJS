@@ -1,5 +1,6 @@
 
-export default function QualifyPath(apiVersion:string,endpoint:string) : string
+export default function QualifyPath(endpoint:string,apiVersion:string="v1") : string
 {
-    return import.meta.env.VITE_Api+"/api/"+apiVersion+"/"+endpoint
+    console.log(import.meta.env.VITE_Api);
+    return import.meta.env.VITE_Api+"/api/"+apiVersion+"/"+endpoint;
 }
