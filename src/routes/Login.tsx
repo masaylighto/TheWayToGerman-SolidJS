@@ -22,8 +22,8 @@ function Login(){
 }
 export default function LoginPage() {
     return (
-      <div class="w-full h-full bg-germanwave  flex justify-center items-center">
-        <main  class=" w-80 rounded  shadow-md bg-white/80 justify-between py-6 flex flex-col" >
+      <div style={"background-color:#7988977d"} class="w-full h-full bg-germanwave  flex justify-center items-center">
+        <main   class=" w-80 rounded  shadow-md bg-white/80 justify-between py-6 flex flex-col" >
            <p class="text-center text-xl mb-5 text-flag-red" >مرحبا بك</p>
            <p class="text-center mx-auto text-sm mb-5 w-40 text-flag-black">  في موقع الطريق الى المانيا</p>
            <Field  imageCssClass="Person-img" type="text" id="Username" placeholder="اسم المستخدم"></Field>
