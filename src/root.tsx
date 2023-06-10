@@ -9,7 +9,6 @@ import {
   Title,
 } from "solid-start";
 import "./css/tailwind.css";
-console.log()
 export default function Root() {
   return (
     <Html lang="ar" class="h-full">
