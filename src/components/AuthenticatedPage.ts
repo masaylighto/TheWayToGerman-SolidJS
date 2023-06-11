@@ -17,7 +17,7 @@ function GetTokenPayload() : void | TokenPayload
     var base64Url = jwt.split('.')[1];
     var base64 = base64Url.replace('-', '+').replace('_', '/');
     var decodedPayload = JSON.parse(atob(base64));
-    return new TokenPayload(decodedPayload.role,decodedPayload.UserID)
+    return new TokenPayload(decodedPayload.role,decodedPayload.UserID,decodedPayload.UserName)
 }
 export {
     AuthenticatedPage,
