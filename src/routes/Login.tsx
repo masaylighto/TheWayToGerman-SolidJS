@@ -4,7 +4,7 @@ import "./../css/login.css";
 import {type Component } from 'solid-js';
 import Auth from "~/Api/Login";
 import LoginDTO from "~/Api/DTO/LoginDTO"
-import { Keys } from "~/Api/helper";
+import { Keys } from "~/models/helper";
 import ErrorResponse from "~/Api/ResponseObject/ErrorResponse";
 import LoginResponse from "~/Api/ResponseObject/LoginResponse";
 const Field :Component<{id:string,placeholder:string,type:string,imageCssClass:string}>=(props)=>{

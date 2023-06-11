@@ -55,4 +55,19 @@
     background-color: transparent !important;
     outline: transparent !important;
  }
- 
+ @font-face {
+    font-family: Tajwal-Regular;
+    src: url("../fonts/Tajawal/Tajawal-Regular.ttf");
+  }
+  @font-face {
+    font-family: Tajwal-Light;
+    src: url("../fonts/Tajawal/Tajawal-Light.ttf");
+  }
+  * {
+    font-family: Tajwal-Regular;
+  }
+
+.btn-active:active{
+    transform: scale3d(1.2,1.2,1);
+    transition-duration:200ms;
+}
