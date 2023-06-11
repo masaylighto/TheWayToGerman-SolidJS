@@ -9,6 +9,7 @@ import {
   Title,
 } from "solid-start";
 import "./css/tailwind.css";
+import { Suspense } from "solid-js";
 export default function Root() {
   return (
     <Html lang="ar" class="h-full">

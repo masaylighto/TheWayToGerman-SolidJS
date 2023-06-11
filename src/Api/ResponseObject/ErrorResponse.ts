@@ -1,5 +1,13 @@
-class ErrorResponse
+export default class ErrorResponse
 {
-    Error!: string;
+    /**
+     *
+     */
+    constructor(error?:string) {
+        if (error)
+        this.error=error;
+    }
+    
+    error!: string;
       
 }

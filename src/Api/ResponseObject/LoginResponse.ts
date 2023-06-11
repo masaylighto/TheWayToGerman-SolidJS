@@ -1,5 +1,5 @@
-class LoginResponse
+export default class LoginResponse
 {
-    JwtToken!: string;
+    jwtToken!: string;
       
 }

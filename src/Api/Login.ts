@@ -1,8 +1,10 @@
 
 import HTTP_STATUS_CODES from 'http-status-enum';
-import QualifyPath from "./helper"
+import {QualifyPath} from "./helper"
 import LoginDTO from './DTO/LoginDTO';
-export default async function Auth(dto:LoginDTO) : Promise<String | LoginResponse | ErrorResponse>{
+import ErrorResponse from './ResponseObject/ErrorResponse';
+import LoginResponse from './ResponseObject/LoginResponse';
+export default async function Auth(dto:LoginDTO) : Promise<LoginResponse | ErrorResponse>{
 
    let response = await fetch(QualifyPath("Login/Auth"),{
         headers: {
@@ -13,12 +15,15 @@ export default async function Auth(dto:LoginDTO) : Promise<String | LoginRespons
         body:JSON.stringify(dto)
     });
    if (response.status == HTTP_STATUS_CODES.OK){
-        return await response.json() as LoginResponse
+        return await response.json() as LoginResponse;
    }
    if (response.status == HTTP_STATUS_CODES.UNAUTHORIZED){
-        return await response.json() as ErrorResponse
+        return await response.json() as ErrorResponse;
+   }  
+   if (response.status == HTTP_STATUS_CODES.SERVICE_UNAVAILABLE){  
+     return new ErrorResponse("Wait for few minute before you Try again");
    }
-   return await response.text();
+   return new ErrorResponse(await response.text());
 
 }
 
