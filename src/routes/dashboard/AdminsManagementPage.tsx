@@ -22,7 +22,7 @@ function AddAdmin(){
   HideNotification(1000)
   return;
  }
- let dto =new CreateAdminDTO(name.value,email.value,email.value,password.value);
+ let dto =new CreateAdminDTO(name.value,email.value,username.value,password.value);
  CreateAdmin(dto).then((response: Ok | ErrorResponse) =>
  {
  
