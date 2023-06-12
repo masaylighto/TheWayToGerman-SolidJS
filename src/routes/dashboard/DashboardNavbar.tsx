@@ -3,13 +3,13 @@ import "../../css/tailwind.css";
 import "../../css/core.css";
 import NavBar from "~/components/NavBar";
 import NavButton from "~/components/NavButton";
-import { AccessRoles } from "~/models/helper";
+import { AccessRoles } from "~/helper";
 export default function DashboardNavbar(){
  let tokenPayload = GetTokenPayload();
 
     return (
     <AuthenticatedComponent TokenPayload={tokenPayload}>
-         <NavBar>    
+         <NavBar FlexDirection="flex-row" Class="h-fit w-full bg-white">    
             <AuthenticatedComponent TokenPayload={tokenPayload} Role={AccessRoles.OwnerRole}>    
             <NavButton onClick={()=> { location.href= "/dashboard/admin" }}>
              المسؤولين

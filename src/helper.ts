@@ -12,8 +12,16 @@ const AccessRoles = {
     OwnerRole:"Owner",
     AdminRole:"Admin",
 }
+function ToggleReadonly(target : Element):void{
+    if(target.hasAttribute("readOnly")){
+        target.removeAttribute("readOnly")
+        return;
+    }
+    target.setAttribute("readOnly","")
+}
 export {
     QualifyPath,
     Keys,
-    AccessRoles
+    AccessRoles,
+    ToggleReadonly
 }

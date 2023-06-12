@@ -2,7 +2,7 @@ import "../../css/tailwind.css";
 import "../../css/core.css";
 import DashboardNavbar from "./DashboardNavbar";
 import { AuthenticatedPage } from "~/components/AuthenticatedEnforcers";
-import { AccessRoles } from "~/models/helper";
+import { AccessRoles } from "~/helper";
 export default function MainPage(){
 
     return (

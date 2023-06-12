@@ -4,7 +4,7 @@ import "./../css/login.css";
 import {type Component } from 'solid-js';
 import Auth from "~/Api/Login";
 import LoginDTO from "~/Api/DTO/LoginDTO"
-import { Keys } from "~/models/helper";
+import { Keys } from "~/helper";
 import ErrorResponse from "~/Api/ResponseObject/ErrorResponse";
 import LoginResponse from "~/Api/ResponseObject/LoginResponse";
 const Field :Component<{id:string,placeholder:string,type:string,imageCssClass:string}>=(props)=>{
@@ -31,7 +31,7 @@ function Login(){
         location.href ="/dashboard";     
         return;
       }
-      message.innerText = (response as ErrorResponse).error; 
+      message.innerText = (response as ErrorResponse).detail; 
       message.style.color = "#ff4b55";
   });
 }
@@ -39,12 +39,12 @@ export default function LoginPage() {
     return (
       <div style={"background-color:#7988977d"} class="w-full h-full bg-germanwave  flex justify-center items-center">
         <main   class=" w-80 rounded  shadow-md bg-white/80 justify-between py-6 flex flex-col" >
-           <p class="text-center text-xl mb-5 text-flag-red" >مرحبا بك</p>
-           <p class="text-center mx-auto text-sm mb-5 w-40 text-flag-black">  في موقع الطريق الى المانيا</p>
+           <p class="text-center select-none text-xl mb-5 text-flag-red" >مرحبا بك</p>
+           <p class="text-center select-none mx-auto text-sm mb-5 w-40 text-flag-black">  في موقع الطريق الى المانيا</p>
            <Field  imageCssClass="Person-img" type="text" id="Username" placeholder="اسم المستخدم"></Field>
            <Field  imageCssClass="Key-img" type="password" id="Password" placeholder="الرمز"></Field>
            <p class="text-flag-red text-center" id="Message"></p>
-           <button type="button" onclick={()=>Login()} class="rounded border border-flag-red w-1/4 h-8 text-flag-red my-5 mx-auto  text-lg font-thin">دخول</button>
+           <button type="button" onclick={()=>Login()} class="rounded select-none border border-flag-red w-1/4 h-8 text-flag-red my-5 mx-auto  text-lg font-thin">دخول</button>
         </main>
       </div>
     );

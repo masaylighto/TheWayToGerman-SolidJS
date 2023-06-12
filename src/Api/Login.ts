@@ -1,6 +1,6 @@
 
 import HTTP_STATUS_CODES from 'http-status-enum';
-import {QualifyPath} from "../models/helper"
+import {QualifyPath} from "../helper"
 import LoginDTO from './DTO/LoginDTO';
 import ErrorResponse from './ResponseObject/ErrorResponse';
 import LoginResponse from './ResponseObject/LoginResponse';

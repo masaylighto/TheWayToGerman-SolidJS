@@ -5,9 +5,10 @@ export default class ErrorResponse
      */
     constructor(error?:string) {
         if (error)
-        this.error=error;
+        this.detail=error;
     }
     
-    error!: string;
+    detail!:string;
+    status!:number
       
 }
