@@ -1,15 +1,17 @@
 import { AuthenticatedPage } from "~/components/AuthenticatedEnforcers";
-import { AccessRoles, ToggleReadonly } from "~/helper";
+import { AccessRoles, Colors, ToggleReadonly } from "~/helper";
 import DashboardNavbar from "./DashboardNavbar";
 import "../../css/tailwind.css"
 import "../../css/core.css"
 import User from "~/models/user";
-import { For } from "solid-js";
-import CreateAdmin from "~/Api/Owner";
+import { For, Match, Switch, createResource, createSignal } from "solid-js";
 import CreateAdminDTO from "~/Api/DTO/CreateAdminDTO";
 import ErrorResponse from "~/Api/ResponseObject/ErrorResponse";
 import Ok from "~/Api/ResponseObject/Ok";
 import { HideNotification, NotificationBox, ShowNotification } from "~/components/Notification";
+import GetAdminsDTO from "~/Api/DTO/GetAdminsDTO";
+import { CreateAdmin, GetAdmins } from "~/Api/Owner";
+import GetAdminsResponse from "~/Api/ResponseObject/GetAdminsResponse";
 function AddAdmin(){
  let name = document.getElementById("name") as HTMLInputElement
  let username = document.getElementById("username") as HTMLInputElement
@@ -27,21 +29,32 @@ function AddAdmin(){
   console.log(response)
     if ("detail" in response) 
     {
-      ShowNotification(response.detail,"#ff4b55")
+      ShowNotification(response.detail,Colors.Red)
     }
     else
     {
-      ShowNotification("Done","#49cc90")  
+      ShowNotification("Done",Colors.Green)  
     }
     HideNotification(1000)
    
  })
 }
-export default function AdminsManagementPage() {
+let [admins, loadAdmins] = createSignal<Array<GetAdminsResponse>>();
+function FetchAdmins(){
 
-    let admins : Array<User> = [
-     
-    ];
+    GetAdmins(new GetAdminsDTO()).then(response =>
+    {
+      if ("detail" in response)
+      {         
+           ShowNotification(response.detail,Colors.Red)          
+      }
+      loadAdmins(response as Array<GetAdminsResponse>)
+    })
+   
+}
+
+export default function AdminsManagementPage() {
+    FetchAdmins();
     return (
       <AuthenticatedPage Role={AccessRoles.OwnerRole}>
       <main style={"background-color:#f5f5f5"} class="min-h-full h-fit">
@@ -57,18 +70,20 @@ export default function AdminsManagementPage() {
                 <button onclick={x=>AddAdmin()} class="border-flag-red text-flag-red  border rounded p-2 select-none">اضافة</button>
               </div>
               <div class="flex flex-col my-2 bg-white shadow  rounded p-2 mx-auto w-4/6">
-                <For each={admins}>{(admin)=>{ 
+                
+                <For each={admins()}>{(admin)=>{ 
                   return(             
-                  <div class="flex flex-row my-1 w-full">
-                    <input hidden>{admin.id}</input>
-                    <input readOnly onDblClick={x=>ToggleReadonly(x.target)} value={admin.name} class="w-5/6 text-center outline-none mx-2 h-8 my-auto"/>
-                    <input readOnly onDblClick={x=>ToggleReadonly(x.target)} value={admin.username} class="w-5/6 text-center outline-none mx-2 h-8 my-auto"/>
-                    <input readOnly onDblClick={x=>ToggleReadonly(x.target)} value={admin.email} class="w-5/6 text-center outline-none mx-2 h-8 my-auto"/>
-                    <button class="border-flag-red mx-1 text-flag-red border rounded p-3 select-none">تعديل</button>
-                    <button class="border-flag-red text-flag-red border rounded px-3 py-2 select-none">حذف</button>
-                  </div>
-                )
-                 }}</For>
+                      <div class="flex flex-row my-1 w-full">
+                        <input hidden>{admin.id}</input>
+                        <input readOnly onDblClick={x=>ToggleReadonly(x.target)} value={admin.name} class="w-5/6 text-center outline-none mx-2 h-8 my-auto"/>
+                        <input readOnly onDblClick={x=>ToggleReadonly(x.target)} value={admin.username} class="w-5/6 text-center outline-none mx-2 h-8 my-auto"/>
+                        <input readOnly onDblClick={x=>ToggleReadonly(x.target)} value={admin.email} class="w-5/6 text-center outline-none mx-2 h-8 my-auto"/>
+                        <button class="border-flag-red mx-1 text-flag-red border rounded p-3 select-none">تعديل</button>
+                        <button class="border-flag-red text-flag-red border rounded px-3 py-2 select-none">حذف</button>
+                      </div>
+                    )
+                  }}</For>
+                 
               </div>
            </div>
                   

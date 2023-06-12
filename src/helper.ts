@@ -7,6 +7,11 @@ const Keys = {
     AuthToken:"JwtToken",
    
 }
+const Colors={
+ Green:"#49cc90",
+ Red:"#ff4b55"
+    
+}
 const AccessRoles = {
 
     OwnerRole:"Owner",
@@ -23,5 +28,6 @@ export {
     QualifyPath,
     Keys,
     AccessRoles,
+    Colors,
     ToggleReadonly
 }

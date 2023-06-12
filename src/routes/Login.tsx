@@ -4,7 +4,7 @@ import "./../css/login.css";
 import {type Component } from 'solid-js';
 import Auth from "~/Api/Login";
 import LoginDTO from "~/Api/DTO/LoginDTO"
-import { Keys } from "~/helper";
+import { Colors, Keys } from "~/helper";
 import ErrorResponse from "~/Api/ResponseObject/ErrorResponse";
 import LoginResponse from "~/Api/ResponseObject/LoginResponse";
 const Field :Component<{id:string,placeholder:string,type:string,imageCssClass:string}>=(props)=>{
@@ -27,12 +27,12 @@ function Login(){
       if ("jwtToken" in response)  {
         localStorage.setItem(Keys.AuthToken,(response as LoginResponse).jwtToken);
         message.innerText = "Login Succeed";
-        message.style.color = "#49cc90";   
+        message.style.color = Colors.Green;   
         location.href ="/dashboard";     
         return;
       }
       message.innerText = (response as ErrorResponse).detail; 
-      message.style.color = "#ff4b55";
+      message.style.color = Colors.Red;
   });
 }
 export default function LoginPage() {
