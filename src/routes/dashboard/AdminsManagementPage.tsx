@@ -46,7 +46,8 @@ function FetchAdmins(){
     {
       if ("detail" in response)
       {         
-           ShowNotification(response.detail,Colors.Red)          
+           ShowNotification(response.detail,Colors.Red)     
+           HideNotification(1000)     
       }
       loadAdmins(response as Array<GetAdminsResponse>)
     })
