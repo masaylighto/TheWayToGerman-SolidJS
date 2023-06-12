@@ -6,7 +6,7 @@ import { AccessRoles } from "~/helper";
 export default function MainPage(){
 
     return (
-        <AuthenticatedPage Role={AccessRoles.OwnerRole}>
+        <AuthenticatedPage>
         <main class="h-full w-full">
             <DashboardNavbar></DashboardNavbar>
             <div class="h-full w-full flex justify-center items-center">
