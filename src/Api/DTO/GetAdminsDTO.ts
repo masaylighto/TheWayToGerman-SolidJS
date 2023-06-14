@@ -1,4 +1,3 @@
-export default class GetAdminsDTO{
-
-    name!:string
+export default class GetAdminsDTO{  
+    name?:string
 }
