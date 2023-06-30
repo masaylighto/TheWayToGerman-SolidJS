@@ -1,14 +1,14 @@
 
 import HTTP_STATUS_CODES from 'http-status-enum';
-import {Keys, QualifyPath} from "../helper"
-import CreateAdminDTO from './DTO/CreateAdminDTO';
-import ErrorResponse from './ResponseObject/ErrorResponse';
-import Ok from './ResponseObject/Ok';
-import GetAdminsDTO from './DTO/GetAdminsDTO';
+import {Keys, QualifyPath} from "../../helper"
+import CreateAdminDTO from '../DTO/CreateAdminDTO';
+import ErrorResponse from '../ResponseObject/ErrorResponse';
+import Ok from '../ResponseObject/Ok';
+import GetAdminsDTO from '../DTO/GetAdminsDTO';
 import { HandleApiExceptions } from './helper';
-import GetAdminsResponse from './ResponseObject/GetAdminsResponse';
-import DeleteAdminDTO from './DTO/DeleteAdminDTO';
-import CreateAdminResponse from './ResponseObject/CreateAdminResponse';
+import GetAdminsResponse from '../ResponseObject/GetAdminsResponse';
+import DeleteAdminDTO from '../DTO/DeleteAdminDTO';
+import CreateAdminResponse from '../ResponseObject/CreateAdminResponse';
  async function CreateAdmin(dto:CreateAdminDTO) : Promise<CreateAdminResponse | ErrorResponse>{
 
    return await fetch(QualifyPath("Owner/Admin"),{

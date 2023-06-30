@@ -11,7 +11,7 @@ export default function DashboardNavbar(){
     <AuthenticatedComponent TokenPayload={tokenPayload}>
          <NavBar FlexDirection="flex-row" Class="h-fit w-full bg-white">    
             <AuthenticatedComponent TokenPayload={tokenPayload} Role={AccessRoles.OwnerRole}>    
-            <NavButton onClick={()=> { location.href= "/dashboard/admin" }}>
+            <NavButton onClick={()=> { location.href= "/dashboard/admins" }}>
              المسؤولين
             </NavButton>
             </AuthenticatedComponent>

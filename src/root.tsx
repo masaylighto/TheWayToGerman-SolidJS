@@ -13,6 +13,7 @@ import LoginPage from "./routes/Login";
 import AdminsManagementPage from "./routes/dashboard/AdminsManagementPage";
 import MainPage from "./routes/dashboard/MainPage";
 import NotFound from "./routes/[...404]";
+import CategoriesManagementPage from "./routes/dashboard/CategoriesManagementPage";
 export default function Root() {
   return (
     <Html lang="ar" dir="rtl" class="h-full w-full">
@@ -25,7 +26,8 @@ export default function Root() {
           <Routes>            
             <Route path="/login" component={LoginPage} />
             <Route path="/dashboard/" component={MainPage} /> 
-            <Route path="/dashboard/admin" component={AdminsManagementPage} /> 
+            <Route path="/dashboard/admins" component={AdminsManagementPage} /> 
+            <Route path="/dashboard/categories" component={CategoriesManagementPage} /> 
             <Route path="*" element={<NotFound />} />          
           </Routes>      
       </Body>

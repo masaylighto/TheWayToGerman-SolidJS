@@ -1,4 +1,4 @@
-import ErrorResponse from "./ResponseObject/ErrorResponse"
+import ErrorResponse from "../ResponseObject/ErrorResponse"
 
 async function HandleApiExceptions(err:any) : Promise<ErrorResponse> {
    

@@ -5,7 +5,7 @@ import "../css/core.css"
 
     return( <p hidden class="text-flag-red text-center fixed top-20 border left-5 bg-white w-40 h-fit p-2 rounded shadow" id="NotificationMessage"></p> )
 }
-function ShowNotification(message:string,color:string,showTime:number=1000):void{
+function ShowNotification(message:string,color:string,showTime:number=2000):void{
 
     let notificationBox = document.getElementById("NotificationMessage")! as HTMLParagraphElement;   
     notificationBox.innerHTML=message;

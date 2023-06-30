@@ -1,9 +1,9 @@
 
 import HTTP_STATUS_CODES from 'http-status-enum';
-import {QualifyPath} from "../helper"
-import LoginDTO from './DTO/LoginDTO';
-import ErrorResponse from './ResponseObject/ErrorResponse';
-import LoginResponse from './ResponseObject/LoginResponse';
+import {QualifyPath} from "../../helper"
+import LoginDTO from '../DTO/LoginDTO';
+import ErrorResponse from '../ResponseObject/ErrorResponse';
+import LoginResponse from '../ResponseObject/LoginResponse';
 export default async function Auth(dto:LoginDTO) : Promise<LoginResponse | ErrorResponse>{
 
    let response = await fetch(QualifyPath("Login/Auth"),{

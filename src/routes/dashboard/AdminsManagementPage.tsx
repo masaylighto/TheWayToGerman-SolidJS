@@ -8,7 +8,7 @@ import CreateAdminDTO from "~/Api/DTO/CreateAdminDTO";
 import ErrorResponse from "~/Api/ResponseObject/ErrorResponse";
 import { NotificationBox, ShowNotification } from "~/components/Notification";
 import GetAdminsDTO from "~/Api/DTO/GetAdminsDTO";
-import { CreateAdmin, DeleteAdmin, GetAdmins } from "~/Api/Owner";
+import { CreateAdmin, DeleteAdmin, GetAdmins } from "~/Api/Services/Owner";
 import GetAdminsResponse from "~/Api/ResponseObject/GetAdminsResponse";
 import DeleteAdminDTO from "~/Api/DTO/DeleteAdminDTO";
 import CreateAdminResponse from "~/Api/ResponseObject/CreateAdminResponse";
@@ -71,7 +71,7 @@ function _DeleteAdmin(element:Element,id:string){
 }
 
 
-// Api Reponse Handler
+// Api Response Handler
 function _HandleAddAdminResponse(response: CreateAdminResponse | ErrorResponse ,dto : CreateAdminDTO){
   let admin = new GetAdminsResponse();
   if ("detail" in response) 
