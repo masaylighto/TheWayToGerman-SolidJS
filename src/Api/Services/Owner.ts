@@ -37,11 +37,10 @@ async function DeleteAdmin(dto:DeleteAdminDTO) : Promise<Ok | ErrorResponse>{
   }
  async function GetAdmins(dto:GetAdminsDTO) : Promise<Array<GetAdminsResponse> | ErrorResponse>{
      let url = new URL(QualifyPath(`Owner/Admin`))  
-     let params= new URLSearchParams();
      if( dto.name != undefined){
-         params.append("name",dto.name as string)   
+      url.searchParams.append("name",dto.name as string)   
      }     
-     url.search = params.toString();
+      
    
    return await fetch(url,{
          headers: {
