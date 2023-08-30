@@ -9,11 +9,12 @@ import {
   Title,
 } from "solid-start";
 import "./css/tailwind.css";
-import LoginPage from "./routes/Login";
-import AdminsManagementPage from "./routes/dashboard/AdminsManagementPage";
+
+import AdminsView from "./routes/dashboard/admins/AdminsView";
 import MainPage from "./routes/dashboard/MainPage";
 import NotFound from "./routes/[...404]";
-import CategoriesManagementPage from "./routes/dashboard/CategoriesManagementPage";
+import CategoriesView from "./routes/dashboard/categories/CategoriesView";
+import Login from "./routes/Login";
 export default function Root() {
   return (
     <Html lang="ar" dir="rtl" class="h-full w-full">
@@ -24,10 +25,10 @@ export default function Root() {
       </Head>
       <Body class="h-full w-full">
           <Routes>            
-            <Route path="/login" component={LoginPage} />
+            <Route path="/login" component={Login} />
             <Route path="/dashboard/" component={MainPage} /> 
-            <Route path="/dashboard/admins" component={AdminsManagementPage} /> 
-            <Route path="/dashboard/categories" component={CategoriesManagementPage} /> 
+            <Route path="/dashboard/admins" component={AdminsView} /> 
+            <Route path="/dashboard/categories" component={CategoriesView} /> 
             <Route path="*" element={<NotFound />} />          
           </Routes>      
       </Body>

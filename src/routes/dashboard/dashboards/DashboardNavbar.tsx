@@ -1,6 +1,6 @@
 import {AuthenticatedComponent, AuthenticatedPage, GetTokenPayload} from "~/components/AuthenticatedEnforcers";
-import "../../css/tailwind.css";
-import "../../css/core.css";
+import "~/css/tailwind.css";
+import "~/css/core.css";
 import NavBar from "~/components/NavBar";
 import NavButton from "~/components/NavButton";
 import { AccessRoles } from "~/helper";

@@ -11,7 +11,7 @@ import DeleteAdminDTO from '../DTO/DeleteAdminDTO';
 import CreateAdminResponse from '../ResponseObject/CreateAdminResponse';
  async function CreateAdmin(dto:CreateAdminDTO) : Promise<CreateAdminResponse | ErrorResponse>{
 
-   return await fetch(QualifyPath("Owner/Admin"),{
+   return await fetch(QualifyPath("Admin"),{
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
@@ -24,7 +24,7 @@ import CreateAdminResponse from '../ResponseObject/CreateAdminResponse';
 }
 async function DeleteAdmin(dto:DeleteAdminDTO) : Promise<Ok | ErrorResponse>{
 
-     return await fetch(QualifyPath("Owner/Admin"),{
+     return await fetch(QualifyPath("Admin"),{
           headers: {
               'Accept': 'application/json',
               'Content-Type': 'application/json',
@@ -36,12 +36,10 @@ async function DeleteAdmin(dto:DeleteAdminDTO) : Promise<Ok | ErrorResponse>{
   
   }
  async function GetAdmins(dto:GetAdminsDTO) : Promise<Array<GetAdminsResponse> | ErrorResponse>{
-     let url = new URL(QualifyPath(`Owner/Admin`))  
-     if( dto.name != undefined){
-      url.searchParams.append("name",dto.name as string)   
-     }     
-      
-   
+    let url = new URL(QualifyPath(`Admin`))  
+    if( dto.name != undefined){
+    url.searchParams.append("name",dto.name as string)   
+    } 
    return await fetch(url,{
          headers: {
              'Accept': 'application/json',
@@ -85,8 +83,9 @@ async function DeleteAdmin(dto:DeleteAdminDTO) : Promise<Ok | ErrorResponse>{
    return new ErrorResponse(await response.text());
 
  }
- export {
-    CreateAdmin,
-    GetAdmins,
-    DeleteAdmin
+ const AdminApi={
+     CreateAdmin,
+     GetAdmins,
+     DeleteAdmin,     
  }
+ export default AdminApi
