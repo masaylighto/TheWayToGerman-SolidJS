@@ -40,7 +40,7 @@ export default function CategoriesView() {
             </select>
             <button title="add category button" onclick={x=>Category.Add()} class="border-flag-red text-flag-red  border rounded p-2 select-none">اضافة</button>
           </div>
-          <div id="AdminTable" class="flex flex-col my-2 bg-white shadow  rounded p-2 mx-auto w-2/6">
+          <div id="CategoriesTable" class="flex flex-col my-2 bg-white shadow  rounded p-2 mx-auto w-2/6">
             <For each={Category.List()}>{(x:GetCategoriesResponse)=>CategoryRow(x)}</For>
           </div>
         </div>                  

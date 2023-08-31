@@ -15,6 +15,8 @@ import MainPage from "./routes/dashboard/MainPage";
 import NotFound from "./routes/[...404]";
 import CategoriesView from "./routes/dashboard/categories/CategoriesView";
 import Login from "./routes/Login";
+import Articles from "./routes/dashboard/articles/Article";
+import ArticleView from "./routes/dashboard/articles/ArticleView";
 export default function Root() {
   return (
     <Html lang="ar" dir="rtl" class="h-full w-full">
@@ -27,6 +29,7 @@ export default function Root() {
           <Routes>            
             <Route path="/login" component={Login} />
             <Route path="/dashboard/" component={MainPage} /> 
+            <Route path="/dashboard/articles" component={ArticleView} /> 
             <Route path="/dashboard/admins" component={AdminsView} /> 
             <Route path="/dashboard/categories" component={CategoriesView} /> 
             <Route path="*" element={<NotFound />} />          
