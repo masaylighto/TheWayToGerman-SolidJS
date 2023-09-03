@@ -9,14 +9,14 @@ async function GetArticles()
 { 
 return []
 }
-async function ConvertFileToURL(file:File) :Promise<string>
+async function ConvertFileToBase64(file:File) :Promise<string>
 {
-    let result_base64 = await new Promise((resolve) => {
+    let result_Array = await new Promise((resolve) => {
         let fileReader = new FileReader();
         fileReader.onload = (e) => resolve(fileReader.result);
-        fileReader.readAsDataURL(file);
+        fileReader.readAsArrayBuffer(file);
     }); 
-    return result_base64 as string;
+    return btoa(new Uint8Array(result_Array as ArrayBuffer).reduce((data, byte) => data + String.fromCharCode(byte), ''));
 }
 async function AddArticle(html:string)
 { 
@@ -26,9 +26,9 @@ async function AddArticle(html:string)
     }
     let titleField = document.getElementById("TitleField") as HTMLInputElement
     let categoryField = document.getElementById("CategoryField") as HTMLSelectElement    
-    let pictureAsURL= await ConvertFileToURL(pictureField.files?.item(0) as File)  
+    let picture= await ConvertFileToBase64(pictureField.files?.item(0) as File)  
     let overviewField = document.getElementById("OverviewField") as HTMLInputElement
-    let dto = new CreateArticleDTO(titleField.value,overviewField.value,html,categoryField.value,pictureAsURL) 
+    let dto = new CreateArticleDTO(titleField.value,overviewField.value,html,categoryField.value,picture) 
     let response= await ArticlesApi.Add(dto)
     if ("detail" in response)
     {         
