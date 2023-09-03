@@ -1,11 +1,13 @@
 import Quill from "quill";
-import { ComponentProps, createEffect, createSignal } from "solid-js";
+import { ComponentProps, Setter, createEffect, createSignal } from "solid-js";
 import { JSX } from "solid-js/jsx-runtime";
 import "~/css/quill.snow.css"
-export default function DocWriter(props:{cssClass?:string}): JSX.Element{
-   
+let quill:Quill;
+  
+function DocWriter(props:{cssClass?:string}): JSX.Element{
+
   createEffect(() => {
-    const quill = new Quill("#editor", {
+    quill = new Quill("#editor", {
         modules: {
           toolbar: [
             [{
@@ -24,9 +26,16 @@ export default function DocWriter(props:{cssClass?:string}): JSX.Element{
         },
         theme: 'snow' // or 'bubble'
       });
+   
   });
 
   return (
-      <div id="editor" dir="ltr" class={props.cssClass}></div>  
+      <div id="editor" class={props.cssClass}></div>  
   );
 }
+
+const Doc = {
+  Writer:DocWriter,
+  GetContent:()=>quill.root.innerHTML
+}
+export default Doc
