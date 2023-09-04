@@ -9,5 +9,4 @@ WORKDIR "/src"
 RUN npm ci --omit=dev
 RUN npm install -D tailwindcss postcss autoprefixer
 RUN npx tailwindcss init -p
-RUN npm run build
-CMD npm start
+CMD npm run dev
