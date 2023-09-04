@@ -2,7 +2,7 @@
 
 FROM node:20 AS base
 WORKDIR /app
-EXPOSE 80
+EXPOSE 3000
 WORKDIR /src
 COPY . .
 WORKDIR "/src"
