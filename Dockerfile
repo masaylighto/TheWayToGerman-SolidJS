@@ -6,7 +6,5 @@ EXPOSE 3000
 WORKDIR /src
 COPY . .
 WORKDIR "/src"
-RUN npm ci --omit=dev
-RUN npm install -D tailwindcss postcss autoprefixer
-RUN npx tailwindcss init -p
+RUN npm install
 CMD npm run dev
