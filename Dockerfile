@@ -1,4 +1,4 @@
-FROM node:21 AS base
+FROM node:20 AS base
 WORKDIR /app
 EXPOSE 3000
 WORKDIR /src

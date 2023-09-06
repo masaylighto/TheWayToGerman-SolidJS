@@ -4,9 +4,7 @@ services:
     image: thewaytogermanfront
     restart: on-failure
     ports:    
-      - 6080:3000
-    environment:
-     NODE_ENV: "prod"  
+      - 6080:3000    
     build:
       context: .
       dockerfile: Dockerfile

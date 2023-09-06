@@ -14,7 +14,6 @@ import { AuthenticatedPage } from "../../../components/AuthenticatedEnforcers";
 
 /// Ui
 function CategoryRow(category:GetCategoriesResponse):JSX.Element{
-  console.log(category);
 return ( <div class="flex flex-row  bg-white shadow mt-14 mb-2 rounded p-2">
             <p title="Category Name" class="w-5/6 text-center outline-none mx-2 h-8 my-auto">{category.name}</p>
             <select disabled title="Category Language" id="language" class="w-5/6 text-center outline-none mx-2 h-8 my-auto appearance-none" value={category.language} >       
