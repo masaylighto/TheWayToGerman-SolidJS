@@ -1,4 +1,4 @@
-import { Keys, QualifyPath } from "~/helper";
+import { Keys, QualifyPath } from "../../helper";
 import CreateArticleDTO from "../DTO/CreateArticleDTO";
 import CreateArticleResponse from "../ResponseObject/CreateArticleResponse";
 import ErrorResponse from "../ResponseObject/ErrorResponse";

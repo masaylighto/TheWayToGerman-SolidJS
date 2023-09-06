@@ -1,8 +1,9 @@
 import { createResource } from "solid-js";
-import CreateArticleDTO from "~/Api/DTO/CreateArticleDTO";
-import ArticlesApi from "~/Api/Services/Article";
-import { ShowNotification } from "~/components/Notification";
-import { Colors } from "~/helper";
+import CreateArticleDTO from "../../../Api/DTO/CreateArticleDTO";
+import ArticlesApi from "../../../Api/Services/Article";
+import { Colors } from "../../../helper";
+import { ShowNotification } from "../../../components/Notification";
+
 
 const [ArticlesResource,{mutate, refetch}] = createResource(GetArticles);
 async function GetArticles()

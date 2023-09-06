@@ -1,12 +1,14 @@
-import { AuthenticatedPage } from "~/components/AuthenticatedEnforcers";
-import { AccessRoles } from "~/helper";
+
 import DashboardNavbar from "../dashboards/DashboardNavbar";
-import "~/css/tailwind.css"
-import "~/css/core.css"
+import "../../../css/tailwind.css"
+import "../../../css/core.css"
 import { For, JSX  } from "solid-js";
-import { NotificationBox, } from "~/components/Notification";
 import Category from "./Categories";
-import GetCategoriesResponse from "~/Api/ResponseObject/GetCategoriesResponse";
+import GetCategoriesResponse from "../../../Api/ResponseObject/GetCategoriesResponse";
+import { NotificationBox } from "../../../components/Notification";
+import { AccessRoles } from "../../../helper";
+import { AuthenticatedPage } from "../../../components/AuthenticatedEnforcers";
+
 
 
 

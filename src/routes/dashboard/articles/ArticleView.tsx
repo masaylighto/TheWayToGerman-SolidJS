@@ -1,15 +1,12 @@
-import { AuthenticatedPage } from "~/components/AuthenticatedEnforcers";
-import { NotificationBox } from "~/components/Notification";
-import { AccessRoles } from "~/helper";
-import DashboardNavbar from "../dashboards/DashboardNavbar";
-import { Quill } from "quill";
-import "~/css/core.css";
-import DocWriter from "~/components/DocWritter";
-import Articles from "./Article";
-import { For, createSignal } from "solid-js";
-import GetCategoriesResponse from "~/Api/ResponseObject/GetCategoriesResponse";
+import { For } from "solid-js";
+import GetCategoriesResponse from "../../../Api/ResponseObject/GetCategoriesResponse";
+import { AuthenticatedPage } from "../../../components/AuthenticatedEnforcers";
+import { NotificationBox } from "../../../components/Notification";
+import { AccessRoles } from "../../../helper";
 import Category from "../categories/Categories";
-
+import DashboardNavbar from "../dashboards/DashboardNavbar";
+import Articles from "./Article";
+import Doc from "../../../components/DocWriter";
 function ArticleCell(Article:any){
     return <></>
 }
@@ -49,7 +46,7 @@ export default function ArticleView() {
                  <input accept="image/*" type="file" class="hidden" id="PictureField" ref={Picture}></input>
               </label>
             </div>
-            <button  onClick={()=>Articles.Add(DocWriter.GetContent())} class=" text-flag-red text-lg  border rounded w-24 p-1 select-none self-center ">شارك</button>
+            <button  onClick={()=>Articles.Add(Doc.GetContent())} class=" text-flag-red text-lg  border rounded w-24 p-1 select-none self-center ">شارك</button>
             </div>
             <div  class="flex bg-white flex-row  border px-2 rounded items-center gap-2">
               <p>لمحة</p>
@@ -57,7 +54,7 @@ export default function ArticleView() {
             </div>
           </div>
           <div id="editor-container" dir="ltr"  class="bg-white shadow  w-[1000px]  mx-auto flex flex-col ">
-            <DocWriter.Writer cssClass="min-h-[400px] w-full "/>
+            <Doc.Writer cssClass="min-h-[400px] w-full "/>
          
           </div>     
           </div>                  

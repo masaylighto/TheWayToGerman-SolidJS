@@ -1,7 +1,7 @@
 import "../../css/tailwind.css";
 import "../../css/core.css";
 import DashboardNavbar from "./dashboards/DashboardNavbar";
-import { AuthenticatedPage } from "~/components/AuthenticatedEnforcers";
+import { AuthenticatedPage } from "../../components/AuthenticatedEnforcers";
 export default function MainPage(){
 
     return (

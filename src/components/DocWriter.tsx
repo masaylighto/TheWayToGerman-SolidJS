@@ -1,7 +1,7 @@
 import Quill from "quill";
 import { ComponentProps, Setter, createEffect, createSignal } from "solid-js";
 import { JSX } from "solid-js/jsx-runtime";
-import "~/css/quill.snow.css"
+import "../css/quill.snow.css"
 let quill:Quill;
   
 function DocWriter(props:{cssClass?:string}): JSX.Element{

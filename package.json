@@ -1,19 +1,21 @@
 {
   "name": "TheWayToGerman-SolidJS",
   "scripts": {
-    "dev": "solid-start dev",
-    "build": "solid-start build",
-    "start": "solid-start start"
+    "start": "vite --mode production",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
   },
   "type": "module",
   "devDependencies": {
     "@types/quill": "^2.0.11",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.24",
-    "solid-start-node": "^0.2.19",
+    "solid-devtools": "^0.27.3",
     "tailwindcss": "^3.3.2",
     "typescript": "^4.9.4",
-    "vite": "^4.1.4"
+    "vite": "^4.1.4",
+    "vite-plugin-solid": "^2.7.0"
   },
   "dependencies": {
     "@rollup/plugin-commonjs": "^25.0.4",
@@ -25,7 +27,6 @@
     "save": "^2.9.0",
     "solid-app-router": "^0.4.2",
     "solid-js": "^1.7.11",
-    "solid-start": "^0.2.26",
     "undici": "^5.15.1"
   },
   "engines": {

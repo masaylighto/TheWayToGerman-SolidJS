@@ -1,6 +1,7 @@
 import { ComponentProps, JSX } from "solid-js";
-import { Keys } from "~/helper";
-import TokenPayload from "~/models/TokenPayload";
+import TokenPayload from "../models/TokenPayload";
+import { Keys } from "../helper";
+;
 function AuthenticatedPage(props: ComponentProps<any> & { Role?:string }) : JSX.Element
 {  
     let tokenPayload = GetTokenPayload();   

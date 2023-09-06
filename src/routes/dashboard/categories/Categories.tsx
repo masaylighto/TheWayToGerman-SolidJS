@@ -1,10 +1,10 @@
-import { Colors} from "~/helper";
-import {  ShowNotification } from "~/components/Notification";
-import CreateCategoryDTO from "~/Api/DTO/CreateCategoryDTO";
-import CategoriesApi from "~/Api/Services/Category";
 import { createResource } from "solid-js";
-import GetCategoriesDTO from "~/Api/DTO/GetCategoriesDTO";
-import GetCategoriesResponse from "~/Api/ResponseObject/GetCategoriesResponse";
+import GetCategoriesDTO from "../../../Api/DTO/GetCategoriesDTO";
+import GetCategoriesResponse from "../../../Api/ResponseObject/GetCategoriesResponse";
+import CategoriesApi from "../../../Api/Services/Category";
+import { ShowNotification } from "../../../components/Notification";
+import { Colors } from "../../../helper";
+import CreateCategoryDTO from "../../../Api/DTO/CreateCategoryDTO";
 
 
 // Signals

@@ -1,14 +1,12 @@
-import { AuthenticatedPage } from "~/components/AuthenticatedEnforcers";
-import { AccessRoles, ToggleReadonly } from "~/helper";
 import DashboardNavbar from "../dashboards/DashboardNavbar";
-import "~/css/tailwind.css"
-import "~/css/core.css"
+import "../../../css/tailwind.css"
+import "../../../css/core.css"
 import { For, JSX} from "solid-js";
-
-import { NotificationBox,  } from "~/components/Notification";
-
-import GetAdminsResponse from "~/Api/ResponseObject/GetAdminsResponse";
 import Admin from "./Admins";
+import GetAdminsResponse from "../../../Api/ResponseObject/GetAdminsResponse";
+import { AccessRoles, ToggleReadonly } from "../../../helper";
+import { AuthenticatedPage } from "../../../components/AuthenticatedEnforcers";
+import { NotificationBox } from "../../../components/Notification";
 
 
 /// Ui

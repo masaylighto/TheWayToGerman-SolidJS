@@ -1,11 +1,11 @@
-import { Colors  } from "~/helper";
-import {  createSignal,createResource } from "solid-js";
-import CreateAdminDTO from "~/Api/DTO/CreateAdminDTO";
-import {  ShowNotification } from "~/components/Notification";
-import GetAdminsDTO from "~/Api/DTO/GetAdminsDTO";
-import AdminApi from "~/Api/Services/Admin" ;
-import GetAdminsResponse from "~/Api/ResponseObject/GetAdminsResponse";
-import DeleteAdminDTO from "~/Api/DTO/DeleteAdminDTO";
+import { createResource } from "solid-js";
+import { ShowNotification } from "../../../components/Notification";
+import { Colors } from "../../../helper";
+import AdminApi from "../../../Api/Services/Admin";
+import CreateAdminDTO from "../../../Api/DTO/CreateAdminDTO";
+import GetAdminsDTO from "../../../Api/DTO/GetAdminsDTO";
+import GetAdminsResponse from "../../../Api/ResponseObject/GetAdminsResponse";
+import DeleteAdminDTO from "../../../Api/DTO/DeleteAdminDTO";
 
 
 // Signals

@@ -1,13 +1,13 @@
-import "~/css/tailwind.css";
-import "~/css/core.css";
-import "~/css/login.css";
+import "./../css/tailwind.css";
+import "./../css/core.css";
+import "./../css/login.css";
 import {type Component } from 'solid-js';
-import Auth from "~/Api/Services/Login";
-import LoginDTO from "~/Api/DTO/LoginDTO"
-import { Colors, Keys } from "~/helper";
-import ErrorResponse from "~/Api/ResponseObject/ErrorResponse";
-import LoginResponse from "~/Api/ResponseObject/LoginResponse";
-import { NotificationBox, ShowNotification } from "~/components/Notification";
+import Auth from "./../Api/Services/Login";
+import LoginDTO from "./../Api/DTO/LoginDTO"
+import { Colors, Keys } from "./../helper";
+import ErrorResponse from "./../Api/ResponseObject/ErrorResponse";
+import LoginResponse from "./../Api/ResponseObject/LoginResponse";
+import { NotificationBox, ShowNotification } from "./../components/Notification";
 const Field :Component<{id:string,placeholder:string,type:string,imageCssClass:string}>=(props)=>{
 
     return (

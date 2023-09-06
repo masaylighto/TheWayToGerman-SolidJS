@@ -1,4 +1,4 @@
-import { Keys, QualifyPath } from "~/helper";
+import { Keys, QualifyPath } from "../../helper";
 import CreateCategoryDTO from "../DTO/CreateCategoryDTO";
 import HTTP_STATUS_CODES from "http-status-enum";
 import ErrorResponse from "../ResponseObject/ErrorResponse";

@@ -1,9 +1,11 @@
-import {AuthenticatedComponent, AuthenticatedPage, GetTokenPayload} from "~/components/AuthenticatedEnforcers";
-import "~/css/tailwind.css";
-import "~/css/core.css";
-import NavBar from "~/components/NavBar";
-import NavButton from "~/components/NavButton";
-import { AccessRoles } from "~/helper";
+
+import "../../../css/tailwind.css";
+import "../../../css/core.css";
+import { AuthenticatedComponent, GetTokenPayload } from "../../../components/AuthenticatedEnforcers";
+import NavBar from "../../../components/NavBar";
+import { AccessRoles } from "../../../helper";
+import NavButton from "../../../components/NavButton";
+
 export default function DashboardNavbar(){
  let tokenPayload = GetTokenPayload();
 
