@@ -9,7 +9,7 @@ export default function HomeView(){
             <img src="src/imgs/Hussam.png"  class="w-44 rounded-full"/>
             <p class="text-white " > النجاح قرار وليس صدفة</p>
         </div>
-        <
+        
     </main>        
     )
 }
