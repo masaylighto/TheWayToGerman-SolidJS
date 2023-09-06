@@ -3,7 +3,7 @@ import "../css/tailwind.css"
 import "../css/core.css"
 export default function NavBar(props:ComponentProps<any> & {FlexDirection:string, Class:string}):JSXElement{
 
-    return(<nav lang="ar"  class={"flex border-l shadow-/60 shadow "+props.FlexDirection+" "+props.Class }>
+    return(<nav lang="ar"  class={"flex shadow-/60 shadow "+props.FlexDirection+" "+props.Class }>
         {props.children}
     </nav>)
 }

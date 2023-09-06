@@ -4,7 +4,7 @@ import { AuthenticatedPage } from "../../../components/AuthenticatedEnforcers";
 import { NotificationBox } from "../../../components/Notification";
 import { AccessRoles } from "../../../helper";
 import Category from "../categories/Categories";
-import DashboardNavbar from "../dashboards/DashboardNavbar";
+import DashboardNavbar from "../navbar/DashboardNavbar";
 import Articles from "./Article";
 import Doc from "../../../components/DocWriter";
 function ArticleCell(Article:any){

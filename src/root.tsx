@@ -8,11 +8,13 @@ import Login from "./routes/Login";
 import Articles from "./routes/dashboard/articles/Article";
 import ArticleView from "./routes/dashboard/articles/ArticleView";
 import { Route, Routes, Router } from "@solidjs/router";
+import HomeView from "./routes/front/home/HomeView";
 
 export default function Root() {
   return (      
         <Router>
-          <Routes>            
+          <Routes>     
+            <Route path="/" component={HomeView} />       
             <Route path="/login" component={Login} />
             <Route path="/dashboard/" component={MainPage} /> 
             <Route path="/dashboard/articles" component={ArticleView} /> 

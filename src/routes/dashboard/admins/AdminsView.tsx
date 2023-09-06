@@ -1,4 +1,4 @@
-import DashboardNavbar from "../dashboards/DashboardNavbar";
+import DashboardNavbar from "../navbar/DashboardNavbar";
 import "../../../css/tailwind.css"
 import "../../../css/core.css"
 import { For, JSX} from "solid-js";

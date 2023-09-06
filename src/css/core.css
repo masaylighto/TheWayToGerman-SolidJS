@@ -41,6 +41,7 @@
     background: url("../imgs/Germanwaves.svg");
 }
 
+
 .input-no-bg:valid {
     background-color: transparent !important;
 }
