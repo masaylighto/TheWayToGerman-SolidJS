@@ -1,7 +1,7 @@
 {
   "name": "TheWayToGerman-SolidJS",
   "scripts": {
-    "start": "vite --mode production --port 80 --host",
+    "start": "vite --mode production --port 80 --host -c vite.config.tsx",
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview"
