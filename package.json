@@ -1,7 +1,7 @@
 {
   "name": "TheWayToGerman-SolidJS",
   "scripts": {
-    "start": "vite --mode production --port 3000",
+    "start": "vite --mode production --port 80 --host",
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview"
