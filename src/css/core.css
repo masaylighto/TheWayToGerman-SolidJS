@@ -72,3 +72,13 @@
     transform: scale3d(1.2,1.2,1);
     transition-duration:200ms;
 }
+.btn-hover:hover{
+    transform: scale3d(0.8,0.8,1);
+    transition-duration:200ms;
+}
+.hover-brightness:hover{
+    filter: brightness(0.75);
+}
+.click-brightness:active{
+    filter: brightness(0.50);
+}

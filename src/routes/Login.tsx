@@ -34,7 +34,7 @@ function Login(){
 }
 export default function LoginPage() {
     return (
-      <div style={"background-color:#7988977d"} class="w-full h-full bg-germanwave  flex justify-center items-center">
+      <div style={"background-color:#7988977d;min-height:100vmin"} class="w-full h-full bg-germanwave  flex justify-center items-center">
         <main   class=" w-80 rounded  shadow-md bg-white/80 justify-between py-6 flex flex-col" >
            <NotificationBox/> 
            <p class="text-center select-none text-xl mb-5 text-flag-red" >مرحبا بك</p>

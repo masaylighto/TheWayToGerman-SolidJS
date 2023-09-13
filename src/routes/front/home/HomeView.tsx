@@ -13,6 +13,7 @@ export default  function HomeView(){
             <img src="src/imgs/Hussam.png"  class="w-44 rounded-full"/>
             <p class="text-white " > النجاح قرار وليس صدفة</p>
         </div>
+        <p class="mx-auto my-10 text-2xl">اخر الاخبار</p>
         <ArticleViewer Articles={Home.ArticleList()}></ArticleViewer>
     </main>        
     )
