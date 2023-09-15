@@ -18,7 +18,7 @@ export default function Root() {
             <Route path="/" component={HomeView} />       
             <Route path="/login" component={Login} />
             <Route path="/dashboard/" component={MainPage} /> 
-            <Route path="article/:id" component={ArticleView}></Route>
+            <Route path="/article/:id" component={ArticleView}></Route>
             <Route path="/dashboard/articles" component={ArticlePublisherView} /> 
             <Route path="/dashboard/admins" component={AdminsView} /> 
             <Route path="/dashboard/categories" component={CategoriesView} /> 

@@ -4,8 +4,8 @@ import { createEffect } from "solid-js";
 import FrontNavbar from "../navbar/FrontNavbar";
 
 export default function ArticleView()
-{  
-    Article.Get()
+{   let param= useParams();
+    Article.Get(param.id)
  createEffect(()=>{    
     let articleContainer= document.getElementById("ArticleContainer") as HTMLDivElement
     let author= document.getElementById("Author") as HTMLParagraphElement
