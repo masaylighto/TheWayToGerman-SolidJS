@@ -5,7 +5,7 @@ import { NotificationBox } from "../../../components/Notification";
 import { AccessRoles } from "../../../helper";
 import Category from "../categories/Categories";
 import DashboardNavbar from "../navbar/DashboardNavbar";
-import Articles from "./Article";
+import Articles from "./ArticlePublisher";
 import Doc from "../../../components/DocWriter";
 function ArticleCell(Article:any){
     return <></>
@@ -15,7 +15,7 @@ function CategoryOption(entry:GetCategoriesResponse)
   return <option value={entry.id}>{entry.name}</option>
 }
 
-export default function ArticleView() {    
+export default function ArticlePublisherView() {    
   let Picture: HTMLInputElement | undefined;
     return (
       <AuthenticatedPage Role={AccessRoles.OwnerRole}>

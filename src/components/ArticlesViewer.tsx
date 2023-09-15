@@ -5,7 +5,7 @@ import Tables from "./Tables";
 function ArticleCell(entity:GetArticlesResponse ){
    var createdDate= new Date(entity.createDate).toLocaleDateString('ar', { year:"numeric", month:"short", day:"numeric"});
 
-    return <div class="flex flex-col  w-56 gap-2 bg-white hover-brightness click-brightness  overflow-hidden  ">
+    return <div onClick={()=>{location.href="/Article/"+entity.id}} class="flex flex-col  w-56 gap-2 bg-white hover-brightness click-brightness  overflow-hidden  ">
          <img class=" h-40 w-56 bg-contain"  src={entity.picture}></img>
         <div class="flex flex-col gap-1  p-2">
             <b>

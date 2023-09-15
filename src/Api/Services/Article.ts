@@ -1,8 +1,10 @@
 import { Keys, QualifyPath } from "../../helper";
 import CreateArticleDTO from "../DTO/CreateArticleDTO";
+import GetArticleDTO from "../DTO/GetArticleDTO";
 import GetArticlesDTO from "../DTO/GetArticlesDTO";
 import CreateArticleResponse from "../ResponseObject/CreateArticleResponse";
 import ErrorResponse from "../ResponseObject/ErrorResponse";
+import GetArticleResponse from "../ResponseObject/GetArticleResponse";
 import GetArticlesResponse from "../ResponseObject/GetArticlesResponse";
 import { HandleApiExceptions } from "./helper";
 import HTTP_STATUS_CODES from "http-status-enum";
@@ -41,6 +43,20 @@ async function CreateArticle(dto:CreateArticleDTO) : Promise<CreateArticleRespon
      }).then(HandleGetArticlesResponse).catch(HandleApiExceptions);
  
  }
+ async function GetArticle(dto:GetArticleDTO) : Promise<GetArticleResponse| ErrorResponse>{
+    if( dto.Id == undefined){        
+        return new ErrorResponse("article id is not specified");
+    }  
+    return await fetch(QualifyPath(`Article/${dto.Id}`),{
+         headers: {
+             'Accept': 'application/json',
+             'Content-Type': 'application/json',
+             'Authorization':'Bearer '+ localStorage.getItem(Keys.AuthToken)
+         },
+         method:"GET"
+     }).then(HandleGetArticleResponse).catch(HandleApiExceptions);
+ 
+ }
 async function HandleCreateArticleResponse(response:Response) :  Promise<CreateArticleResponse | ErrorResponse>
 {
   if (response.status == HTTP_STATUS_CODES.OK){
@@ -63,8 +79,20 @@ async function HandleGetArticlesResponse(response:Response) :  Promise<GetArticl
   return new ErrorResponse(await response.text());
 
 }
+async function HandleGetArticleResponse(response:Response) :  Promise<GetArticleResponse | ErrorResponse>
+{
+  if (response.status == HTTP_STATUS_CODES.OK){
+       return await response.json() as GetArticleResponse;
+  }
+  if (response.status == HTTP_STATUS_CODES.BAD_REQUEST){
+       return await response.json() as ErrorResponse;
+  }
+  return new ErrorResponse(await response.text());
+
+}
 const ArticlesApi={
  Add:CreateArticle,
- Get:GetArticles
+ Get:GetArticles,
+ GetByID:GetArticle
 }
 export default ArticlesApi;
