@@ -1,5 +1,5 @@
 import { useParams } from "@solidjs/router";
-import Article from "./article";
+import Article from "./Article";
 import { createEffect } from "solid-js";
 import FrontNavbar from "../navbar/FrontNavbar";
 
