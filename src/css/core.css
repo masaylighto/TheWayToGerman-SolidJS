@@ -82,3 +82,4 @@
 .click-brightness:active{
     filter: brightness(0.50);
 }
+/* Hide scrollbar for Chrome, Safari and Opera */

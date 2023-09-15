@@ -1,7 +1,7 @@
 import DashboardNavbar from "../navbar/DashboardNavbar";
 import "../../../css/tailwind.css"
 import "../../../css/core.css"
-import { For, JSX} from "solid-js";
+import { For, JSX, createEffect} from "solid-js";
 import Admin from "./Admins";
 import GetAdminsResponse from "../../../Api/ResponseObject/GetAdminsResponse";
 import { AccessRoles, ToggleReadonly } from "../../../helper";
@@ -21,7 +21,7 @@ function AdminRow(admin:GetAdminsResponse):JSX.Element{
       </div>
   )
 }
-export default function AdminsView() {
+export default function AdminsView() {  
   Admin.Get();
   return (
     <AuthenticatedPage Role={AccessRoles.OwnerRole}>
